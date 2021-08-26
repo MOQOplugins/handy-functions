@@ -29,109 +29,111 @@ OR
 
 ## Workflow
 
-### Shufflen van een array
+### Shuffle array
+This variable reorganises an array fully so it is also in a different order. You also can limit the array to a few childs after it got reorganised. VERY HANDY!
+
 ```twig
 {% set stringArray = ['1', '2', '3', '4', '5', '6'] %}
 
-{# craft.moqo.shuffle(array, limit) #}
-{% set randomWithLimit = craft.moqo.shuffle(stringArray, 4) %}
-{# Resultaat is bv: ['2', '6', '1', '3'] #}
+{# craft.handyfunctions.shuffle(array, limit) #}
+{% set randomWithLimit = craft.handyfunctions.shuffle(stringArray, 4) %}
+{# Result is bv: ['2', '6', '1', '3'] #}
 
-{% set randomWithoutLimit = craft.moqo.shuffle(stringArray) %}
-{# Resultaat is bv: ['4', '3', '1', '5', '2', '6'] #}
+{% set randomWithoutLimit = craft.handyfunctions.shuffle(stringArray) %}
+{# Result is bv: ['4', '3', '1', '5', '2', '6'] #}
 ```
-Deze variabele reorganiseert een Array volledig waardoor alles altijd in een andere volgorde staat. Je kunt ook een limit toekennen aan de variabele waardoor enkel de eerste aantal die je wenst van de geshuffelde array, worden weergegeven
 
 #### Parameters
 ```twig
-{# craft.moqo.shuffle(array, limit) #}
+{# craft.handyfunctions.shuffle(array, limit) #}
 ```
-| Parameter |                                               | Verwachte inhoud | Verplicht |
-| --------- | --------------------------------------------- | ---------------- | --------- |
-| array     | De array die je wenst te shufflen             | Array            | ja        |
-| limit     | Max aantal items nadat de array is geshuffelt | int              | nee       |
+| Parameter |                                                           | Datatype | Required |
+| --------- | --------------------------------------------------------- | -------- | -------- |
+| array     | The array you want to shuffle                             | Array    | yes      |
+| limit     | Max amount of direct childs th limit the organised array  | int      | no       |
 
-:::
 
-### Array items uniek maken
+### Unique array
+Remove a duplicate array, string, int or other contents from an array that are the same. It only works on child elements from the array
+
 ```twig
 {% set notUniqueArray = ['1', '2', '3', '1', '4', '6', '5', '6'] %}
 
-{# craft.moqo.uniqueArray(array) #}
-{% set unique = craft.moqo.uniqueArray(stringArray) %}
-{# Resultaat is: ['1', '2', '3', '4', '5', '6'] #}
+{# craft.handyfunctions.uniqueArray(array) #}
+{% set unique = craft.handyfunctions.uniqueArray(stringArray) %}
+{# Result is: ['1', '2', '3', '4', '5', '6'] #}
 ```
-Hiermee kan je dezelfde items uit de array weghalen.
 
 #### Parameters
 ```twig
-{# craft.moqo.uniqueArray(array) #}
+{# craft.handyfunctions.uniqueArray(array) #}
 ```
-| Parameter |                                               | Verwachte inhoud | Verplicht |
-| --------- | --------------------------------------------- | ---------------- | --------- |
-| array     | De array die je wenst te filteren             | Array            | ja        |  
+| Parameter |                                          | Datatype | Required |
+| --------- | ---------------------------------------- | -------- | -------- |
+| array     | The array you want to remove things from | Array    | yes      |  
 
-:::
 
-### Truncate tekst
+### Truncate text
+With this variable function you can shorten text by using some parameters. You also kan choose what you append after the text like "..."
+You can truncate based on character or by word, YOUR CALL!
+
 ```twig
 {% set text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel eleifend leo, vel posuere purus." %}
 
-{# craft.moqo.truncate(text, based-on, amount, append characters) #}
-{% set truncatedText = craft.moqo.truncate(text, 'words', 10, '...') %}
-{# Resultaat is: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel..." #}
+{# craft.handyfunctions.truncate(text, based-on, amount, append characters) #}
+{% set truncatedText = craft.handyfunctions.truncate(text, 'words', 10, '...') %}
+{# Result is: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel..." #}
 
-{% set truncatedText = craft.moqo.truncate(text, 'characters', 10, '...') %}
-{# Resultaat is: "Lorem ipsu..." #}
+{% set truncatedText = craft.handyfunctions.truncate(text, 'characters', 10, '...') %}
+{# Result is: "Lorem ipsu..." #}
 ```
-Met dit kan je eenvoudig je tekst inkorten op basis van enkele parameters. Je kan dan ook kiezen wat je er na zet zoals het veel voorkomende "..."
 
 #### Parameters
 ```twig
-{# craft.moqo.truncate(text, based-on, amount, append characters) #}
+{# craft.handyfunctions.truncate(text, based-on, amount, append characters) #}
 ```
-| Parameter |                                                     | Verwachte inhoud                                        | Verplicht | 
-| --------- | --------------------------------------------------- | ------------------------------------------------------- | --------- |
-| text      | De tekst die je wenst te afkorten                   | string                                                  | ja        |
-| based-on  | Afkorten op woorden of karakters                    | "words", "characters", "character", "letter", "letters" | ja        |
-| amount    | Aantal woorden/karakters die je wenst weer te geven | int                                                     | ja        |
-| append-characters  | Wat je wenst toe te voegen na het afbreken | string                                                  | ja        |
+| Parameter |                                                              | Datatype                                                | Required | 
+| --------- | ------------------------------------------------------------ | ------------------------------------------------------- | --------- |
+| text      | The text to truncate                                         | string                                                  | yes        |
+| based-on  | Truncate based on words or characters                        | "words", "characters", "character", "letter", "letters" | yes        |
+| amount    | Amount of words/characters to display                        | int                                                     | yes        |
+| append-characters  | What do you want to append after the truncated text | string                                                  | yes        |
 
-:::
 
 ### Craft session variabele
-<strong>Ophalen van een craft session variabele</strong>
+Thanks to this Handy function you can get session details that might get registered by other plugins like Craft Commerce for example. It gets the data of the visitor their Craft session.
+<strong>Get a session variable</strong>
 ```twig
-{% set variable = craft.moqo.getSessionVariable('variableName') %}
+{% set variable = craft.handyfunctions.getSessionVariable('variableName') %}
 ```
-<strong>Instellen van een craft session variabele</strong> (Zal je waarschijnlijk nooit moeten doen)
+<strong>Set a session variable</strong>
 ```twig
-{% set variable = craft.moqo.setSessionVariable('variableName', 'Ewa nifo') %}
+{% set variable = craft.handyfunctions.setSessionVariable('variableName', 'Ewa nifo') %}
 ```
-a.d.h.v. deze craft session functies kan je zaken ophalen die misschien door andere plugins worden geregistreerd of door craft zelf. Om kortweg een voorbeeld te geven van zaken die in de craft sessie zitten is de login van de admin.
 
 #### Parameters
 ```twig
-{# craft.moqo.getSessionVariable('variableName') #}
-{# craft.moqo.setSessionVariable('variableName', 'Ewa nifo') #}
+{# craft.handyfunctions.getSessionVariable('variableName') #}
+{# craft.handyfunctions.setSessionVariable('variableName', 'Ewa nifo') #}
 ```
 <strong>Get</strong>
-| Parameter    |                | Verwachte inhoud | Verplicht | 
-| ------------ | -------------- | ---------------- | --------- |
-| variableName | Variabele naam | string           | ja        |
+| Parameter    |                | Datatype | Required | 
+| ------------ | -------------- | -------- | -------- |
+| variableName | Variabele name | string   | yes       |
 
 <strong>Set</strong>
-| Parameter    |                  | Verwachte inhoud | Verplicht | 
-| ------------ | ---------------- | ---------------- | --------- |
-| variableName | Variabele naam   | string           | ja        |
-| content      | Variabele inhoud | string           | ja        |
-:::
+| Parameter    |                       | Datatype | Required | 
+| ------------ | --------------------- | -------- | --------- |
+| variableName | Variabele name        | string   | yes        |
+| content      | New variabele content | string   | yes        |
 
-### Tijdsverschil berekenen
+
+### Timedifference calculation
+With this function you can retrieve the difference between 2 dates. You get a object back with all details about the timedifference. This way you can create things like: "Posted 2 months ago", "commented 1 day ago"
 ```twig
-{# craft.moqo.timeDifference(oldest date, newest date) #}
-{% set timeDifference = craft.moqo.timeDifference(item.postDate, now) %}
-{# Resultaat is: Object {
+{# craft.handyfunctions.timeDifference(oldest date, newest date) #}
+{% set timeDifference = craft.handyfunctions.timeDifference(item.postDate, now) %}
+{# Result is: Object {
     minutes: 0,
     hours: 2,
     days: 7,
@@ -139,60 +141,61 @@ a.d.h.v. deze craft session functies kan je zaken ophalen die misschien door and
     years: 0
 } #}
 ```
-Met deze variabele kan je ophalen wat het verschil is tussen 2 datums. Je krijgt hier een object terug met meer details omtrent het tijdsverschil. Hiermee kan je zaken creëeren zoals "2 maanden geleden gepost", "1 dag geleden gepost", ...
 
 #### Parameters
 ```twig
-{# craft.moqo.timeDifference(oldest date, newest date) #}
+{# craft.handyfunctions.timeDifference(oldest date, newest date) #}
 ```
-| Parameter     |                | Verwachte inhoud | Verplicht | 
-| ------------- | -------------- | ---------------- | --------- |
-| oldest date   | Oudste datum   | DateObject       | ja        |
-| newest date   | Nieuwste datum | DateObject       | ja        |
-:::
+| Parameter     |             | Datatype   | Required | 
+| ------------- | ----------- | ---------- | -------- |
+| oldest date   | Oldest date | DateObject | yes       |
+| newest date   | Newest date | DateObject | yes       | 
+
 
 ### base64 string
+With this function you can encode or decode a string to base64.
+
 ```twig
-{% set string = "Deze string wordt via een base64 encoded" %}
+{% set string = "This string can get encoded or decoded in base64" %}
 
-{# craft.moqo.base64Encode(string to be encoded) #}
-{% set encodedString = craft.moqo.base64Encode(string) %}
-{# Resultaat is: RGV6ZSBzdHJpbmcgd29yZHQgdmlhIGVlbiBiYXNlNjQgZW5jb2RlZA== #}
+{# craft.handyfunctions.base64Encode(string to be encoded) #}
+{% set encodedString = "This string gets encodet to a base64" %}
+{# Result is: RGV6ZSBzdHJpbmcgd29yZHQgdmlhIGVlbiBiYXNlNjQgZW5jb2RlZA== #}
 
-{# craft.moqo.base64Decode(string to be decoded) #}
-{% set decodedString = craft.moqo.base64Decode(encodedString) %}
-{# Resultaat is: "Deze string wordt via een base64 encoded" #}
+{# craft.handyfunctions.base64Decode(string to be decoded) #}
+{% set decodedString = craft.handyfunctions.base64Decode(encodedString) %}
+{# Result is: "This string gets decodet from base64" #}
 ```
-Met deze variabele kan een string encoded/gedecodet worden.
 
 #### Parameters
 ```twig
-{# craft.moqo.base64Encode(string to be encoded) #}
-{# craft.moqo.base64Decode(string to be decoded) #}
+{# craft.handyfunctions.base64Encode(string to be encoded) #}
+{# craft.handyfunctions.base64Decode(string to be decoded) #}
 ```
-| Parameter     |                | Verwachte inhoud | Verplicht | 
-| ------------------------------ | --------------------------------------- | -------| -- |
-| string to be encoded/decoded   | De string die je wilt encoden/decoden   | string | ja |
-:::
+| Parameter                      |                                      | Datatype | Required | 
+| ------------------------------ | ------------------------------------ | -------- | -------- |
+| string to be encoded/decoded   | The string you want to encode/decode | string   | yes      |
 
-### bytes -> kb, mb, gb
+
+### bytes to kb, mb, gb
+With this function you can convert bytes to other units by only showing 3 characters before the unit gets converted to another. Here are some examples...
+
 ```twig
 {# set convertedValue = craft.functions.convertBytes(bytes) #}
-{# Resultaat is 542000000 -> 542 MB  #}
+{# Result is 542000000 -> 542 MB  #}
 ```
-Hiermee kan je bytes omzetten naar een andere eenheid met max. 3 karakters voor een andere eenheid zal worden geregistreerd (kb, mb, gb)
 
-<strong>vb. 122000 bytes</strong>
+<strong>example: 122000 bytes</strong>
 <br/>
 122 KB
 <br/>
 <br/>
-<strong>vb. 532000000 bytes</strong>
+<strong>example: 532000000 bytes</strong>
 <br/>
 532 MB
 <br/>
 <br/>
-<strong>vb. 3100000000 bytes</strong>
+<strong>example: 3100000000 bytes</strong>
 <br/>
 3.1 GB
 
@@ -200,10 +203,6 @@ Hiermee kan je bytes omzetten naar een andere eenheid met max. 3 karakters voor 
 ```twig
 {# craft.functions.convertBytes(bytes) #}
 ```
-| Parameter |                                               | Verwachte inhoud | Verplicht |
-| --------- | --------------------------------------------- | ---------------- | --------- |
-| bytes     | Het aantal bytes die je wenst te laten converteren | string, int | ja        |
-
-:::
-
-::::
+| Parameter |                               | Datatype | Required |
+| --------- | ----------------------------- | ----------- | --------- |
+| bytes     | The bytes you want to convert | string, int | yes        |
