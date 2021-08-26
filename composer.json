@@ -35,8 +35,8 @@
         }
     },
     "extra": {
-        "name": "Moqo",
-        "handle": "moqo",
+        "name": "Handy functions",
+        "handle": "handy-functions",
         "developer": "MOQObe",
         "developerUrl": "https://www.github.com/MOQObe",
         "documentationUrl": "https://github.com/MOQObe/moqo/blob/master/README.md",
