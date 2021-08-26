@@ -36,7 +36,7 @@ class HandyFunctions extends Plugin {
             function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
-                $variable->set('functions', FunctionsVariable::class);
+                $variable->set('handyfunctions', FunctionsVariable::class);
             }
         );
     }
