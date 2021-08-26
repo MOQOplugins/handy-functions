@@ -1,0 +1,49 @@
+{
+    "name": "moqobe/handy-functions",
+    "description": "A kickstart plugin for your craft project where you can use some of the most handy functions that are easy accessible with this plugin",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "moqo"
+    ],
+    "support": {
+        "docs": "https://github.com/MOQOplugins/handy-functions/master/README.md",
+        "issues": "https://github.com/MOQOplugins/handy-functions/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MOQObe",
+            "homepage": "https://www.github.com/MOQOplugins"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "codeception/codeception": "^3.0",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "moqobe\\moqo\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Moqo",
+        "handle": "moqo",
+        "developer": "MOQObe",
+        "developerUrl": "https://www.github.com/MOQObe",
+        "documentationUrl": "https://github.com/MOQObe/moqo/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/MOQObe/moqo/master/CHANGELOG.md",
+        "components": {
+            "moqo": "moqobe\\moqo\\services\\Moqo"
+        },
+        "class": "moqobe\\moqo\\Moqo"
+    }
+}
