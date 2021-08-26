@@ -2,7 +2,7 @@
     "name": "moqobe/handy-functions",
     "description": "A kickstart plugin for your craft project where you can use some of the most handy functions that are easy accessible with this plugin",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "dev-master",
     "keywords": [
         "craft",
         "cms",

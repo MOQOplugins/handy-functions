@@ -3,8 +3,6 @@
 A kickstart plugin for your craft project where you can use some of the most handy functions that are easy accessible with this plugin.
 Sidenote: some things might already be possible within twig, these just can be handy of course!
 
-![Screenshot](resources/img/plugin-logo.png)
-
 ## Requirements
 
 This plugin requires Craft CMS 3.0.0-beta.23 or later.
@@ -14,18 +12,6 @@ This plugin requires Craft CMS 3.0.0-beta.23 or later.
 To install the plugin, follow these instructions.
 
 Go in your Control Panel to Plugin store and search and install the "Handy Functions" plugin
-
-OR
-
-1. Open your terminal and go to your Craft project:
-
-        cd /path/to/project
-
-2. Then tell Composer to load the plugin:
-
-        composer require MOQObe/moqo
-
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Moqo.
 
 ## Workflow
 
