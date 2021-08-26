@@ -11,7 +11,7 @@
 namespace moqobe\handyfunctions;
 
 use moqobe\handyfunctions\variables\FunctionsVariable;
-use moqobe\handyfunctions\CraftVariable;
+use craft\web\twig\variables\CraftVariable;
 
 use Craft;
 use craft\base\Plugin;
