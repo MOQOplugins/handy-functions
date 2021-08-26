@@ -8,10 +8,9 @@
  * @copyright Copyright (c) 2021 MOQOplugins
  */
 
-namespace moqobe\moqo;
+namespace moqobe\handyfunctions;
 
-use moqobe\moqo\variables\MoqoVariable;
-use moqobe\moqo\variables\FunctionsVariable;
+use moqobe\handyfunctions\variables\FunctionsVariable;
 
 use Craft;
 use craft\base\Plugin;
@@ -19,7 +18,7 @@ use craft\services\Plugins;
 
 use yii\base\Event;
 
-class Moqo extends Plugin {
+class HandyFunctions extends Plugin {
     public static $plugin;
     public $schemaVersion = '1.0.0';
     public $hasCpSettings = false;
@@ -36,7 +35,6 @@ class Moqo extends Plugin {
             function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
-                $variable->set('moqo', MoqoVariable::class);
                 $variable->set('functions', FunctionsVariable::class);
             }
         );

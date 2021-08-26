@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-          "moqobe\\moqo\\": "src/"
+          "moqobe\\handyfunctions\\": "src/"
         }
     },
     "extra": {
@@ -40,10 +40,7 @@
         "developer": "MOQObe",
         "developerUrl": "https://www.github.com/MOQObe",
         "documentationUrl": "https://github.com/MOQObe/moqo/blob/master/README.md",
-        "changelogUrl": "https://raw.githubusercontent.com/MOQObe/moqo/master/CHANGELOG.md",
-        "components": {
-            "moqo": "moqobe\\moqo\\services\\Moqo"
-        },
-        "class": "moqobe\\moqo\\Moqo"
+        "changelogUrl": "https://raw.githubusercontent.com/MOQObe/moqo/master/CHANGELOG.md",        
+        "class": "moqobe\\handyfunctions\\HandyFunctions"
     }
 }
