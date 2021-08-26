@@ -29,7 +29,7 @@ OR
 
 ## Workflow
 
-::: tab Shufflen van een array
+### Shufflen van een array
 ```twig
 {% set stringArray = ['1', '2', '3', '4', '5', '6'] %}
 
@@ -42,7 +42,7 @@ OR
 ```
 Deze variabele reorganiseert een Array volledig waardoor alles altijd in een andere volgorde staat. Je kunt ook een limit toekennen aan de variabele waardoor enkel de eerste aantal die je wenst van de geshuffelde array, worden weergegeven
 
-### Parameters
+#### Parameters
 ```twig
 {# craft.moqo.shuffle(array, limit) #}
 ```
@@ -53,7 +53,7 @@ Deze variabele reorganiseert een Array volledig waardoor alles altijd in een and
 
 :::
 
-::: tab Array items uniek maken
+### Array items uniek maken
 ```twig
 {% set notUniqueArray = ['1', '2', '3', '1', '4', '6', '5', '6'] %}
 
@@ -63,7 +63,7 @@ Deze variabele reorganiseert een Array volledig waardoor alles altijd in een and
 ```
 Hiermee kan je dezelfde items uit de array weghalen.
 
-### Parameters
+#### Parameters
 ```twig
 {# craft.moqo.uniqueArray(array) #}
 ```
@@ -73,7 +73,7 @@ Hiermee kan je dezelfde items uit de array weghalen.
 
 :::
 
-::: tab Truncate tekst
+### Truncate tekst
 ```twig
 {% set text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel eleifend leo, vel posuere purus." %}
 
@@ -86,7 +86,7 @@ Hiermee kan je dezelfde items uit de array weghalen.
 ```
 Met dit kan je eenvoudig je tekst inkorten op basis van enkele parameters. Je kan dan ook kiezen wat je er na zet zoals het veel voorkomende "..."
 
-### Parameters
+#### Parameters
 ```twig
 {# craft.moqo.truncate(text, based-on, amount, append characters) #}
 ```
@@ -99,7 +99,7 @@ Met dit kan je eenvoudig je tekst inkorten op basis van enkele parameters. Je ka
 
 :::
 
-::: tab Craft session variabele
+### Craft session variabele
 <strong>Ophalen van een craft session variabele</strong>
 ```twig
 {% set variable = craft.moqo.getSessionVariable('variableName') %}
@@ -110,7 +110,7 @@ Met dit kan je eenvoudig je tekst inkorten op basis van enkele parameters. Je ka
 ```
 a.d.h.v. deze craft session functies kan je zaken ophalen die misschien door andere plugins worden geregistreerd of door craft zelf. Om kortweg een voorbeeld te geven van zaken die in de craft sessie zitten is de login van de admin.
 
-### Parameters
+#### Parameters
 ```twig
 {# craft.moqo.getSessionVariable('variableName') #}
 {# craft.moqo.setSessionVariable('variableName', 'Ewa nifo') #}
@@ -127,7 +127,7 @@ a.d.h.v. deze craft session functies kan je zaken ophalen die misschien door and
 | content      | Variabele inhoud | string           | ja        |
 :::
 
-::: tab Tijdsverschil berekenen
+### Tijdsverschil berekenen
 ```twig
 {# craft.moqo.timeDifference(oldest date, newest date) #}
 {% set timeDifference = craft.moqo.timeDifference(item.postDate, now) %}
@@ -141,7 +141,7 @@ a.d.h.v. deze craft session functies kan je zaken ophalen die misschien door and
 ```
 Met deze variabele kan je ophalen wat het verschil is tussen 2 datums. Je krijgt hier een object terug met meer details omtrent het tijdsverschil. Hiermee kan je zaken creëeren zoals "2 maanden geleden gepost", "1 dag geleden gepost", ...
 
-### Parameters
+#### Parameters
 ```twig
 {# craft.moqo.timeDifference(oldest date, newest date) #}
 ```
@@ -151,7 +151,7 @@ Met deze variabele kan je ophalen wat het verschil is tussen 2 datums. Je krijgt
 | newest date   | Nieuwste datum | DateObject       | ja        |
 :::
 
-::: tab base64 string
+### base64 string
 ```twig
 {% set string = "Deze string wordt via een base64 encoded" %}
 
@@ -165,7 +165,7 @@ Met deze variabele kan je ophalen wat het verschil is tussen 2 datums. Je krijgt
 ```
 Met deze variabele kan een string encoded/gedecodet worden.
 
-### Parameters
+#### Parameters
 ```twig
 {# craft.moqo.base64Encode(string to be encoded) #}
 {# craft.moqo.base64Decode(string to be decoded) #}
@@ -175,7 +175,7 @@ Met deze variabele kan een string encoded/gedecodet worden.
 | string to be encoded/decoded   | De string die je wilt encoden/decoden   | string | ja |
 :::
 
-::: tab bytes -> kb, mb, gb
+### bytes -> kb, mb, gb
 ```twig
 {# set convertedValue = craft.functions.convertBytes(bytes) #}
 {# Resultaat is 542000000 -> 542 MB  #}
@@ -196,7 +196,7 @@ Hiermee kan je bytes omzetten naar een andere eenheid met max. 3 karakters voor 
 <br/>
 3.1 GB
 
-### Parameters
+#### Parameters
 ```twig
 {# craft.functions.convertBytes(bytes) #}
 ```
