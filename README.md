@@ -21,17 +21,17 @@ This variable reorganises an array fully so it is also in a different order. You
 ```twig
 {% set stringArray = ['1', '2', '3', '4', '5', '6'] %}
 
-{# craft.handyfunctions.shuffle(array, limit) #}
-{% set randomWithLimit = craft.handyfunctions.shuffle(stringArray, 4) %}
+{# craft.handyFunctions.shuffle(array, limit) #}
+{% set randomWithLimit = craft.handyFunctions.shuffle(stringArray, 4) %}
 {# Result is bv: ['2', '6', '1', '3'] #}
 
-{% set randomWithoutLimit = craft.handyfunctions.shuffle(stringArray) %}
+{% set randomWithoutLimit = craft.handyFunctions.shuffle(stringArray) %}
 {# Result is bv: ['4', '3', '1', '5', '2', '6'] #}
 ```
 
 #### Parameters
 ```twig
-{# craft.handyfunctions.shuffle(array, limit) #}
+{# craft.handyFunctions.shuffle(array, limit) #}
 ```
 | Parameter |                                                           | Datatype | Required |
 | --------- | --------------------------------------------------------- | -------- | -------- |
@@ -45,14 +45,14 @@ Remove a duplicate array, string, int or other contents from an array that are t
 ```twig
 {% set notUniqueArray = ['1', '2', '3', '1', '4', '6', '5', '6'] %}
 
-{# craft.handyfunctions.uniqueArray(array) #}
-{% set unique = craft.handyfunctions.uniqueArray(stringArray) %}
+{# craft.handyFunctions.uniqueArray(array) #}
+{% set unique = craft.handyFunctions.uniqueArray(stringArray) %}
 {# Result is: ['1', '2', '3', '4', '5', '6'] #}
 ```
 
 #### Parameters
 ```twig
-{# craft.handyfunctions.uniqueArray(array) #}
+{# craft.handyFunctions.uniqueArray(array) #}
 ```
 | Parameter |                                          | Datatype | Required |
 | --------- | ---------------------------------------- | -------- | -------- |
@@ -66,17 +66,17 @@ You can truncate based on character or by word, YOUR CALL!
 ```twig
 {% set text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel eleifend leo, vel posuere purus." %}
 
-{# craft.handyfunctions.truncate(text, based-on, amount, append characters) #}
-{% set truncatedText = craft.handyfunctions.truncate(text, 'words', 10, '...') %}
+{# craft.handyFunctions.truncate(text, based-on, amount, append characters) #}
+{% set truncatedText = craft.handyFunctions.truncate(text, 'words', 10, '...') %}
 {# Result is: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel..." #}
 
-{% set truncatedText = craft.handyfunctions.truncate(text, 'characters', 10, '...') %}
+{% set truncatedText = craft.handyFunctions.truncate(text, 'characters', 10, '...') %}
 {# Result is: "Lorem ipsu..." #}
 ```
 
 #### Parameters
 ```twig
-{# craft.handyfunctions.truncate(text, based-on, amount, append characters) #}
+{# craft.handyFunctions.truncate(text, based-on, amount, append characters) #}
 ```
 | Parameter |                                                              | Datatype                                                | Required | 
 | --------- | ------------------------------------------------------------ | ------------------------------------------------------- | --------- |
@@ -90,17 +90,17 @@ You can truncate based on character or by word, YOUR CALL!
 Thanks to this Handy function you can get session details that might get registered by other plugins like Craft Commerce for example. It gets the data of the visitor their Craft session.
 <strong>Get a session variable</strong>
 ```twig
-{% set variable = craft.handyfunctions.getSessionVariable('variableName') %}
+{% set variable = craft.handyFunctions.getSessionVariable('variableName') %}
 ```
 <strong>Set a session variable</strong>
 ```twig
-{% set variable = craft.handyfunctions.setSessionVariable('variableName', 'Ewa nifo') %}
+{% set variable = craft.handyFunctions.setSessionVariable('variableName', 'Ewa nifo') %}
 ```
 
 #### Parameters
 ```twig
-{# craft.handyfunctions.getSessionVariable('variableName') #}
-{# craft.handyfunctions.setSessionVariable('variableName', 'Ewa nifo') #}
+{# craft.handyFunctions.getSessionVariable('variableName') #}
+{# craft.handyFunctions.setSessionVariable('variableName', 'Ewa nifo') #}
 ```
 <strong>Get</strong>
 | Parameter    |                | Datatype | Required | 
@@ -117,8 +117,8 @@ Thanks to this Handy function you can get session details that might get registe
 ### Timedifference calculation
 With this function you can retrieve the difference between 2 dates. You get a object back with all details about the timedifference. This way you can create things like: "Posted 2 months ago", "commented 1 day ago"
 ```twig
-{# craft.handyfunctions.timeDifference(oldest date, newest date) #}
-{% set timeDifference = craft.handyfunctions.timeDifference(item.postDate, now) %}
+{# craft.handyFunctions.timeDifference(oldest date, newest date) #}
+{% set timeDifference = craft.handyFunctions.timeDifference(item.postDate, now) %}
 {# Result is: Object {
     minutes: 0,
     hours: 2,
@@ -130,7 +130,7 @@ With this function you can retrieve the difference between 2 dates. You get a ob
 
 #### Parameters
 ```twig
-{# craft.handyfunctions.timeDifference(oldest date, newest date) #}
+{# craft.handyFunctions.timeDifference(oldest date, newest date) #}
 ```
 | Parameter     |             | Datatype   | Required | 
 | ------------- | ----------- | ---------- | -------- |
@@ -144,19 +144,19 @@ With this function you can encode or decode a string to base64.
 ```twig
 {% set string = "This string can get encoded or decoded in base64" %}
 
-{# craft.handyfunctions.base64Encode(string to be encoded) #}
+{# craft.handyFunctions.base64Encode(string to be encoded) #}
 {% set encodedString = "This string gets encodet to a base64" %}
 {# Result is: RGV6ZSBzdHJpbmcgd29yZHQgdmlhIGVlbiBiYXNlNjQgZW5jb2RlZA== #}
 
-{# craft.handyfunctions.base64Decode(string to be decoded) #}
-{% set decodedString = craft.handyfunctions.base64Decode(encodedString) %}
+{# craft.handyFunctions.base64Decode(string to be decoded) #}
+{% set decodedString = craft.handyFunctions.base64Decode(encodedString) %}
 {# Result is: "This string gets decodet from base64" #}
 ```
 
 #### Parameters
 ```twig
-{# craft.handyfunctions.base64Encode(string to be encoded) #}
-{# craft.handyfunctions.base64Decode(string to be decoded) #}
+{# craft.handyFunctions.base64Encode(string to be encoded) #}
+{# craft.handyFunctions.base64Decode(string to be decoded) #}
 ```
 | Parameter                      |                                      | Datatype | Required | 
 | ------------------------------ | ------------------------------------ | -------- | -------- |

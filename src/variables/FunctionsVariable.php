@@ -1,7 +1,7 @@
 <?php
 namespace moqobe\handyfunctions\variables;
 
-use moqobe\handyfunctions\Moqo;
+use moqobe\handyfunctions\HandyFunctions;
 
 use Craft;
 

@@ -11,11 +11,12 @@
 namespace moqobe\handyfunctions;
 
 use moqobe\handyfunctions\variables\FunctionsVariable;
-use craft\web\twig\variables\CraftVariable;
 
 use Craft;
 use craft\base\Plugin;
 use craft\services\Plugins;
+use craft\events\PluginEvent;
+use craft\web\twig\variables\CraftVariable;
 
 use yii\base\Event;
 
@@ -36,7 +37,7 @@ class HandyFunctions extends Plugin {
             function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
-                $variable->set('handyfunctions', FunctionsVariable::class);
+                $variable->set('handyFunctions', FunctionsVariable::class);
             }
         );
     }
