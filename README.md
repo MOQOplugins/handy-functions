@@ -13,6 +13,15 @@ To install the plugin, follow these instructions.
 
 Go in your Control Panel to Plugin store and search and install the "Handy Functions" plugin
 
+## In this documentation:
+- [Submit extra function requests](#submit-extra-function-requests)
+- [Workflow](#workflow)
+
+## Submit extra function requests
+
+If you want to have some more functions, simply add an issue with the label ```new request``` and we will look into it to add.
+
+
 ## Workflow
 
 ### Shuffle array
